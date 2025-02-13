@@ -38,7 +38,7 @@ def vector_embedding():
         # Setting the LLM to use embeddings
         st.session_state.embeddings=GoogleGenerativeAIEmbeddings(model = "models/embedding-001")
         # entering the directory which contains the PDFs
-        st.session_state.loader=PyPDFDirectoryLoader("./us_census")
+        st.session_state.loader=PyPDFDirectoryLoader("./pdf_directory")
          ## Loading documents from the Directory that was loaded previously
         st.session_state.docs=st.session_state.loader.load() 
         ## Splitting the documents into chunksfor easier access
