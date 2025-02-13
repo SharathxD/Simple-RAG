@@ -17,7 +17,7 @@ groq_api_key=os.getenv('GROQ_API_KEY')
 os.environ["GOOGLE_API_KEY"]=os.getenv("GOOGLE_API_KEY")
 
 st.title("Simple RAG")
-
+st.write("This is a simple RAG model that uses FAISS for vector embedding and Google Generative AI for embeddings")
 llm=ChatGroq(groq_api_key=groq_api_key,model_name="Llama3-8b-8192")
 
 prompt=ChatPromptTemplate.from_template(
@@ -49,10 +49,11 @@ def vector_embedding():
 
 
 # Button to tell the app to start the vector embedding process
-if st.button("Start Vector Embedding"):
+if st.button("Press to start Vector Embedding"):
     vector_embedding()
-    st.write("Vector Store DB Is Ready")
-input=st.text_input("Enter Your Question From Doduments")
+    st.subheader("Ready to answer Qs")
+
+input=st.text_input("Enter Your Question Here")
 
 
 
